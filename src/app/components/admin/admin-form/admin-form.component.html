@@ -1,0 +1,20 @@
+<form #authForm="ngForm" (ngSubmit)="authSubmit(authForm)">
+    <div  class="form-group ">
+        <label for="name">Name</label>
+        <input type="text" id="name" [ngModel]="editData.name" name="name"  required minlength="6"  class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" [ngModel]="editData.email" name="email"  required email   class="form-control">
+    </div>
+    <div class="form-group d-none">
+        
+        <input type="text" id="id" class="d-none"  name="id"  [ngModel]="editData._id"   class="form-control">
+    </div>
+   
+    <hr>
+    <div class="form-group">
+       <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">{{'Edit'}}</button> |
+        
+     </div>
+</form>

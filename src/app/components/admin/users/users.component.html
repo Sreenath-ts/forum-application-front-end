@@ -1,0 +1,46 @@
+<div *ngIf="!editUser">
+<form class="d-none d-md-flex input-group w-auto my-auto">
+  <input
+    autocomplete="off"
+    type="search"
+    class="form-control rounded"
+    [formControl]="searchControl"
+    placeholder='Search (ctrl + "/" to focus)'
+    style="min-width: 225px;"
+  />
+  <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+</form>
+
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          </div>
+        </th> -->
+        <th scope="col">Access</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users ; let i = index">
+        <th scope="row">
+          <div class="form-check">
+            <input class="form-check-input"  (click)="block(i,u.access)" type="checkbox"   [checked]="u.access" id="flexCheckDefault" />
+            
+          </div>
+        </th>
+        <td>{{u.name }}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.role}}</td>
+        <td><i (click)="edit(i)" class="fa-solid fa-marker"></i></td>
+      </tr>
+    
+    
+    </tbody>
+  </table>
+  </div>
+  <app-admin-form *ngIf="editUser" (editDone)="editDoned($event)" [editData]="DataForEdit"></app-admin-form>

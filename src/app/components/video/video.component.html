@@ -1,0 +1,79 @@
+
+<!-- <div id="video-grid"></div>
+
+    <svg class="mt-6" style="    margin-top: 12%;" (click)="end()" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 1024 1024" class="icon" version="1.1"><path d="M646.4 275.2L512 409.6l-177.066667-177.066667-59.733333 59.733334L512 529.066667l194.133333-194.133334z" fill="#F44336"/><path d="M768 405.333333l-192-192h192z" fill="#F44336"/><path d="M949.333333 657.066667l-51.2-51.2c-181.333333-177.066667-616.533333-151.466667-772.266666 0l-51.2 51.2c-14.933333 14.933333-14.933333 36.266667 0 51.2l102.4 100.266666c14.933333 14.933333 36.266667 14.933333 51.2 0l113.066666-108.8-8.533333-119.466666c36.266667-36.266667 322.133333-36.266667 358.4 0l-6.4 123.733333 108.8 104.533333c14.933333 14.933333 36.266667 14.933333 51.2 0l102.4-100.266666c17.066667-14.933333 17.066667-38.4 2.133333-51.2z" fill="#009688"/></svg>
+
+ -->
+
+
+ <section id="face-view-2" class="t3__face t3__face--2 t3__face--paused">
+    <section id="face-loading" class="t3__face_loading">
+      <i id="loading-dice" class="fa fa-dice-one"></i>
+    </section>
+    <section id="f1"  class="t3__face_inner t3__face_inner--2">
+      
+      <video id="face-stream-2" class="t3__face_stream t3__face_stream--2"  ></video>
+      
+    </section>
+  </section>
+  
+  <section id="face-view-1" class="t3__face t3__face--1 t3__face--paused">
+    <section id="f2" class="t3__face_inner t3__face_inner--1">
+      <video id="face-stream-1" class="t3__face_stream t3__face_stream--1"  ></video>
+      
+    </section>
+  </section>
+  
+  <section class="t3__buttons">
+    <ul class="t3__buttons_list">
+      <!-- [MICROPHONE ON/OFF] -->
+      <li class="t3__button_item">
+        <button class="t3__button t3__button">
+          <i class="fa fa-microphone-slash"></i>
+        </button>
+      </li>
+      <!-- [CAMERA ON/OFF] -->
+      <li class="t3__button_item">
+        <button class="t3__button">
+          <i class="fa fa-video-slash"></i>
+        </button>
+      </li>
+      <!-- [CAMERA FRONT/BACK] -->
+      <li class="t3__button_item">
+        <button class="t3__button">
+          <i class="fa fa-sync-alt"></i>
+        </button>
+      </li>
+      <!-- [FACE VIEWS ROWS/COLS/PIC IN PIC] -->
+      <!-- <li class="t3__button_item">
+                      <button class="t3__button">
+                          <i class="fa fa-camera"></i>
+                      </button>
+                  </li> -->
+      <!-- [CAMERA REORDER] -->
+      <!-- <li class="t3__button_item">
+                      <button class="t3__button">
+                          <i class="fa fa-exchange-alt"></i>
+                      </button>
+                  </li> -->
+      <!-- [CHAT PANEL] -->
+      <li class="t3__button_item">
+        <button class="t3__button">
+          <i class="fa fa-comment"></i>
+        </button>
+      </li>
+      <!-- [RANDOM NEXT FACE] -->
+      <li class="t3__button_item">
+        <button (click)="end()" class="t3__button">
+          <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+          <!-- <i class="fa fa-thumbs-down"></i> -->
+          <!-- <i class="fa fa-hand-middle-finger"></i> -->
+          <!-- <i class="fa fa-handshake-alt-slash"></i> -->
+          <!-- <i class="fa fa-trash"></i> -->
+          <!-- <i class="fa fa-random"></i> -->
+        </button>
+      </li>
+    </ul>
+   
+  </section>
+

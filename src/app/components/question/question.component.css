@@ -1,0 +1,470 @@
+/* .similar{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    overflow-y: scroll; 
+  }
+  
+  .similar::-webkit-scrollbar {
+    display: none; 
+  }
+  
+ 
+   .similar{
+    border: solid 5px black;
+    border-radius: 5px;
+    height: 300px;
+    padding: 10px;
+    width: 200px;
+  }
+   */
+   svg {
+    width: 40px;
+  }
+  
+  h2 {
+    font-size: larger;
+    text-transform: uppercase;
+  }
+  
+  li::marker {
+    font-size: x-large;
+  }
+  
+  .ads-con {
+    display: none;
+  }
+  
+  main {
+    margin-left: 5rem;
+    padding: 1rem;
+    transition: margin var(--transition-speed);
+    position: relative;
+  }
+  main .socials {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .socials .social {
+    height: fit-content;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--text-secondary);
+    padding: 0.7rem 0;
+    border-radius: 12px;
+  }
+  main .socials .social a {
+    transition: scale 400ms;
+    scale: 1.2;
+    position: relative;
+  }
+  main .socials .social a:hover {
+    scale: 1.4;
+  }
+  main a {
+    text-decoration: none;
+    color: var(--link);
+    font-weight: bold;
+    letter-spacing: 0.3ch;
+  }
+  main h1 {
+    text-align: center;
+    font-size: xx-large;
+    text-transform: uppercase;
+  }
+  main .title {
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: unset;
+    user-select: none;
+    width: fit-content;
+  }
+  main .title::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background: var(--text-primary);
+    width: 80px;
+    left: 0;
+    bottom: 0;
+    transition: width 1s ease;
+  }
+  main .title:hover::before {
+    width: 197px;
+  }
+  
+  .part-2 p {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-item:last-child {
+    cursor: pointer;
+  }
+  .nav-item:last-child .fa-primary {
+    color: #00eaff;
+  }
+  .nav-item:last-child .fa-secondary {
+    color: #049d8e;
+  }
+  .animations svg {
+    animation: rotate 3s linear infinite;
+  }
+  .navbar {
+    position: fixed;
+    background: var(--bg-primary);
+    transition: width 400ms ease;
+    border-right: 1px solid var(--bg-secondary);
+  }
+  .navbar .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .navbar .nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(1) opacity(0.7);
+    transition: var(--transition-speed);
+  }
+  .navbar .nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  .navbar .nav-link:hover {
+    filter: grayscale(0) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+  .navbar .link-text {
+    display: none;
+  }
+  
+  .fa-primary {
+    color: #006f64;
+  }
+  
+  .fa-secondary {
+    color: #00eaff;
+  }
+  
+  .fa-primary,
+  .fa-secondary {
+    transition: var(--transition-speed);
+  }
+  
+  .theme-icon {
+    display: none;
+  }
+  
+  .dark #darkIcon {
+    display: inline;
+  }
+  
+  .light #lightIcon {
+    display: inline;
+  }
+  
+  .solar #solarIcon {
+    display: inline;
+  }
+  
+  .box-shadow {
+    height: 100px;
+    width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--box);
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+  }
+  
+  .gradient,
+  .gradient-txt {
+    background: linear-gradient(90deg, #01fffb, #fb08ff, #ffb005);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+  }
+  
+  .gradient-txt {
+    background-size: 150% 150%;
+    animation: motion 2s infinite;
+    background-position: 0% 100%;
+    font-weight: bold;
+  }
+  @keyframes motion {
+    50% {
+      background-position: 100% 0;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    p,
+  li {
+      text-align: center;
+    }
+    svg {
+      width: 25px;
+    }
+    .animation,
+  .gradient,
+  .gradient-txt,
+  .box-shadow {
+      margin: 0 auto;
+    }
+    .box-shadow {
+      margin-top: 1rem;
+    }
+  }
+  @media (min-width: 601px) {
+    .logo {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      letter-spacing: 0.3ch;
+    }
+    .logo svg {
+      transform: rotate(0);
+      transition: transform 1.5s ease;
+    }
+    .nav-item {
+      text-transform: uppercase;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    img {
+      width: 500px;
+      border-radius: 20px;
+    }
+    main {
+      padding-left: 2rem;
+      transition: background 1s;
+    }
+    p,
+  li {
+      line-height: 2;
+      font-size: large;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 1200px) {
+    nav:hover ~ main {
+      margin-left: 16.8rem;
+    }
+    .navbar {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+    .navbar:hover {
+      width: 16.8rem;
+    }
+    .navbar:hover .link-text {
+      display: inline;
+      transition: opacity var(--transition-speed);
+    }
+    .navbar:hover .logo .logo-text {
+      left: 0;
+      padding-left: 12px;
+    }
+    .navbar:hover .logo svg {
+      margin-left: 8rem;
+      transform: rotate(-540deg);
+    }
+    .nav-item {
+      width: 100%;
+    }
+    .nav-item:last-child {
+      margin-top: auto;
+    }
+  }
+  @media (min-width: 1400px) {
+    .ads-con {
+      position: relative;
+      display: block;
+      width: 450px;
+      background: url(https://res.cloudinary.com/liquidtime/image/upload/v1673351017/cyan-loader_yydrri.gif) no-repeat right;
+      background-size: cover;
+      position: fixed;
+      right: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ads {
+      font-size: xx-large;
+      color: var(--link);
+      background: linear-gradient(90deg, #01fffb, #fb08ff, #ffb005);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 10px;
+      border: 1px solid var(--link);
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+    main {
+      width: calc(100% - 350px);
+      transition: background 1s;
+    }
+  }
+  @media (max-width: 600px) {
+    ol {
+      margin-left: 10px;
+    }
+    svg {
+      width: 25px;
+    }
+    .navbar {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+          z-index:999;
+    }
+    .navbar .logo {
+      position: fixed;
+      right: 1rem;
+      top: 1rem;
+    }
+    .navbar .logo .logo-text {
+      display: block;
+      font-size: x-large;
+      text-transform: uppercase;
+      letter-spacing: 0.3ch;
+      font-weight: bold;
+    }
+    .navbar .logo a {
+      height: fit-content;
+      padding: 4px;
+      width: fit-content;
+      border: none;
+      border: 1px solid var(--text-primary);
+      background: var(--bg-primary);
+      filter: none;
+    }
+    .navbar .logo a svg {
+      display: none;
+    }
+    .navbar .navbar-nav {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--text-secondary);
+    }
+    .navbar .nav-link {
+      justify-content: center;
+      width: 50px;
+      height: 60px;
+      border-right: 1px solid var(--link-border);
+    }
+    main {
+      margin: 0;
+      margin-left: 0.2rem;
+    }
+    img {
+      border-radius: 12px;
+      width: 330px;
+      height: 240px;
+    }
+    .conclusion {
+      margin-bottom: 5rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .navbar {
+      top: 0;
+      height: 100vh;
+      width: 16.8rem;
+    }
+    .navbar .link-text {
+      display: inline;
+      transition: opacity var(--transition-speed);
+    }
+    .navbar .logo .logo-text {
+      left: 0;
+      padding-left: 12px;
+    }
+    .navbar .logo svg {
+      margin-left: 8rem;
+      transform: rotate(-540deg);
+    }
+    .nav-item {
+      width: 100%;
+    }
+    .nav-item:last-child {
+      margin-top: auto;
+    }
+    main {
+      margin-left: 16.9rem;
+    }
+  }
+  .fonts,
+  .responsive {
+    margin-top: 2rem;
+  }
+  
+  .animation {
+    border: 1px solid var(--text-secondary);
+    width: 100px;
+    margin-top: 1rem;
+  }
+  .animation .loading-container {
+    width: 100px;
+    height: 100px;
+    scale: 0.8;
+    animation: rotate 2s infinite;
+  }
+  .animation .circle {
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 15px var(--text-primary), 0 0 20px var(--text-secondary);
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+  }
+  
+  ::selection {
+      background: var(--text-primary);
+      color: var(--bg-primary);
+  }

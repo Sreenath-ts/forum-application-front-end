@@ -1,0 +1,275 @@
+
+    
+   
+    <main id="main">
+        <div class="socials">
+            <!-- <div class="social">
+
+                <a href="https://github.com/kleenpulse" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em"
+                        width="1em">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://codepen.io/skyegideon" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em">
+                        <path
+                            d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/kleen_pulse" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em"
+                        width="1em">
+                        <path
+                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                        </path>
+                    </svg>
+                </a>
+            </div> -->
+        </div>
+        <h1 class="title" id="css">Question 🗣</h1>
+        <div>
+           
+            <p> </p><br>
+            
+            <ol>
+                <li id="responsive" class="flex" >
+                
+                    <div id="like">
+                        <button class="btn" id="green"  style="display: block; box-shadow: none;" (click)="vote(1,qdet?._id)"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                        <span style="display: block;text-align: center;">{{qdet?.reactions}}</span>
+                        <button class="btn" id="red" style="box-shadow: none;"><i class="fa fa-thumbs-down fa-lg"  (click)="vote(0,qdet?._id)" aria-hidden="true"></i></button>
+                        
+                    </div>
+ 
+  <div class="text-left text-lg ml-3" style="font-size: 3rem; align-self: center" [innerHTML]="qdet?.titleHtml">
+   
+</div>
+
+<svg  style="margin-left: auto;" (click)="toggleModal(10)"  xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.5rem" viewBox="0 0 24 24" fill="white">
+    <path d="M4 13H19.587C20.0495 13 20.2808 13 20.4128 12.903C20.528 12.8185 20.6015 12.6887 20.6147 12.5464C20.63 12.3833 20.511 12.185 20.273 11.7884L18.247 8.4116C18.1572 8.26195 18.1123 8.18712 18.0947 8.10724C18.0792 8.03659 18.0792 7.96341 18.0947 7.89276C18.1123 7.81288 18.1572 7.73805 18.247 7.5884L20.273 4.2116C20.511 3.81503 20.63 3.61674 20.6147 3.45359C20.6015 3.31133 20.528 3.18154 20.4128 3.09698C20.2808 3 20.0495 3 19.587 3H4L4 21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+                </li><br>
+                <li  id="custom-font">
+                   
+                   
+
+
+                 <div [innerHTML]="qdet?.body">
+
+                 </div>
+                </li><br>
+
+                
+
+                <li id="animations">
+
+                   
+
+                </li><br>
+                <li id="gradient">
+                    
+                </li><br>
+
+                <li id="box-shadow">
+                   
+                </li><br>
+
+                <li id="filter">
+                   
+                </li><br>
+            </ol>
+        </div>
+        
+        <div class="part-2">
+            <h1 style="text-align: left;" class="mb-2">Answer</h1>
+           
+        </div>
+        <div class="conclusion" #editor1> 
+        </div>
+        
+        <!-- kkk -->
+      <div class="flex">
+        <div>
+          <button   class="bg-white hover:bg-black-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mt-2" (click)="editorData(qdet?._id)">Send  ✔️</button>
+        </div>
+        <div class="ml-2 mt-1 w-50">
+          <div class="select-btn">
+            <span class="btn-text">Test your code here..</span>
+            <span class="arrow-dwn">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </div>
+        
+          <ul class="list-items">
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">java</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">c</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">c99</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">cpp</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">cpp14</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">cpp17</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">php</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">python2</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">go</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">sql</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">dart</span>
+            </li>
+            <li class="item">
+              <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+              </span>
+              <span class="item-text">nodejs</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+        <app-question-answer [qId]="qdet?._id"></app-question-answer>
+    </main>
+
+
+
+    <div class=" bg-gray-800 rounded-lg overflow-hidden mt-6" style="display: none;">
+        <div class="flex justify-between">
+            <div id="header-buttons" class="py-3 px-4 flex">
+                <div class="rounded-full w-3 h-3 bg-red-500 mr-2"></div>
+                <div class="rounded-full w-3 h-3 bg-yellow-500 mr-2"></div>
+                <div class="rounded-full w-3 h-3 bg-green-500"></div>
+            </div>
+            <button  class="p-2 text-center bg-gray-800 text-gray-100 hover:bg-gray-700 rounded flex justify-between items-center">
+                <svg id="report" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="pr-1">
+                    <path fill="currentColor" fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v9a2 2 0 002 2h2v2a2 2 0 002 2h9a2 2 0 002-2V8a2 2 0 00-2-2h-2V4a2 2 0 00-2-2H4zm9 4V4H4v9h2V8a2 2 0 012-2h5zM8 8h9v9H8V8z"/>
+                </svg>
+                Copy
+            </button>
+        </div>
+        <div class="w-full overflow-auto">
+        </div>
+    </div>
+
+
+
+
+
+    <!-- modal -->
+    
+
+
+<div *ngIf="showModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+      <!--header-->
+      <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+        <h3 class="text-3xl font-semibold">
+          Report Abuse
+        </h3>
+        <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="toggleModal(10)">
+          <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+            ×
+          </span>
+        </button>
+      </div>
+      <!--body-->
+      <div class="relative p-6 flex-auto">
+        <p class="my-4  text-lg leading-relaxed">
+            Thank you for reporting any abuse that violates our code of conduct or terms and conditions.
+             We continue to try to make this environment a great one for everybody.<br>
+            </p>
+             <label id="example-radio-group-label">Pick your  reason</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="Reason">
+  <mat-radio-button class="example-radio-button text-slate-500" *ngFor="let season of seasons" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+       <div *ngIf="Reason == 'other'">
+        <p>Message</p>
+        <p class="text-slate-500"> Please provide any additional information or context that will help us understand and handle the situation.</p>
+        <form  class="example-form mt-2">
+           
+          
+            <mat-form-field class="example-full-width">
+             
+              <textarea [(ngModel)]="text" name="text" class="text-slate-800" matInput placeholder=""></textarea>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <!--footer-->
+      <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+        <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal(0)">
+          Close
+        </button>
+        <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal(1)">
+          Send Feedback
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>`
+
+
+ 

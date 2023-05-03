@@ -1,0 +1,194 @@
+
+
+
+    
+             
+        
+
+
+       
+        <div id="bodyMiddle" #myDivElement>
+            <div class="bodyMiddle_top">
+                <h3 class="bodyMiddle_top_text" id="bodyMiddleTop_relevant">Relevent</h3>
+                <h3 class="bodyMiddle_top_text">Latest</h3>
+                <h3 class="bodyMiddle_top_text">Top</h3>
+               
+                
+                <!-- component -->
+
+
+    <button (click)="askQ()" class="bg-neutral-200 px-2 py-1 ml-auto   text-sm border-neutral-400 border-2 text-neutral-600 hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-blue-400 duration-[400ms,700ms] transition-[color,box-shadow] bodyMiddle_top_text">
+        Ask Question
+    </button>
+
+
+            </div>
+              <!-- otp -->
+              <div *ngIf="!otpValidated" (click)="otpIniated()" class="p-8 space-y-4">
+     
+   
+ 
+                <div class="flex w-96 shadow-lg rounded-lg">
+                 <div class="bg-red-600 py-4 px-6 rounded-l-lg flex items-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="fill-current text-white" width="20" height="20"><path fill-rule="evenodd" d="M4.47.22A.75.75 0 015 0h6a.75.75 0 01.53.22l4.25 4.25c.141.14.22.331.22.53v6a.75.75 0 01-.22.53l-4.25 4.25A.75.75 0 0111 16H5a.75.75 0 01-.53-.22L.22 11.53A.75.75 0 010 11V5a.75.75 0 01.22-.53L4.47.22zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5H5.31zM8 4a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 4zm0 8a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                 </div>
+                 <div class="px-4 py-6 bg-white rounded-r-lg flex justify-between items-center w-full border border-l-transparent border-gray-200">
+                   <div>Please verify your email.!</div>
+                   <button>
+                     <svg xmlns="http://www.w3.org/2000/svg" class="fill-current text-gray-700" viewBox="0 0 16 16" width="20" height="20"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
+                   </button>
+                 </div>
+               </div>
+             </div>
+                <!-- otp -->
+            <div class="bodyMiddle_postsClass" *ngIf="data.length>0 ? true : false">
+                <!-- POST 1 -->
+                <!-- <div id="bodyMiddle_posts">
+                    <img id="postImage" src="assets/images/Image1.png" alt="">
+                    <div class="postCredits">
+                        <img id="postImage" src="assets/icons/DPs/Tapajyoti.jpg">
+                        <div>
+                            <h4 id="postCredits_names">Tapajyoti Bose</h4>
+                            <h5 id="postCredits_date">Oct 2 (8 day ago)</h5>
+                        </div>
+
+                    </div>
+                    <h1 id="postTitle">7 Cool HTML Elements Nobody Uses</h1>
+                    <div class="postTagsClass">
+                        <h4 id="postTag">#HTML</h4>
+                        <h4 id="postTag">#CSS</h4>
+                        <h4 id="postTag">#javascript</h4>
+                        <h4 id="postTag">#webdevelopment</h4>
+                    </div>
+                    <div class="postReactionsContainerClass">
+                        <div class="postReactionClass"><img id="postReactionIcon"
+                                src="assets/icons/PostReaction/like_outline1.svg">
+                            <h4>198 Reactions</h4>
+                        </div>
+                        <div class="postReactionClass"><img id="postReactionIcon"
+                                src="assets/icons/PostReaction/comment_outline1.svg">
+                            <h4>20 Comments</h4>
+                        </div>
+                        <div class="postReactionClass">
+                            <h4>3 min read</h4>
+                            <img id="postReactionIcon" src="assets/icons/PostReaction/bookmark_outline1.svg">
+                        </div>
+
+                    </div>
+                </div> -->
+                <!-- POST 2 -->
+                <div id="bodyMiddle_posts" (click)="qDet(q._id)" *ngFor="let q of data">
+                    
+                    <div class="postCredits">
+                        <img id="postImage" src="assets/icons/DPs/peirre.png">
+                        <div>
+                            <h4 id="postCredits_names">{{q.user}}</h4>
+                            <h5 id="postCredits_date">Oct 8 (2 days ago)</h5>
+                        </div>
+
+                    </div>
+                    
+                    <h1 id="postTitle" [innerHTML]="q.titleHtml"></h1>
+                    <div class="postTagsClass">
+                        <h4 id="postTag">#VanillaJavascript</h4>
+                        <h4 id="postTag">#Backend</h4>
+                        <h4 id="postTag">#javascript</h4>
+                        <h4 id="postTag">#webdevelopment</h4>
+                    </div>
+                    <div class="postReactionsContainerClass">
+                        <div class="postReactionClass"><img id="postReactionIcon"
+                                src="assets/icons/PostReaction/like_outline1.svg">
+                            <h4>198 Reactions</h4>
+                        </div>
+                        <div class="postReactionClass"><img id="postReactionIcon"
+                                src="assets/icons/PostReaction/comment_outline1.svg">
+                            <h4>20 Comments</h4>
+                        </div>
+                        <div class="postReactionClass">
+                            <h4>3 min read</h4>
+                            <img id="postReactionIcon" src="assets/icons/PostReaction/bookmark_outline1.svg">
+                        </div>
+
+                    </div>
+                </div>
+ <!-- POST 2 -->
+ <!-- <div id="bodyMiddle_posts">
+    
+    <div class="postCredits">
+        <img id="postImage" src="assets/icons/DPs/peirre.png">
+        <div>
+            <h4 id="postCredits_names">Pierre Bouillon</h4>
+            <h5 id="postCredits_date">Oct 8 (2 days ago)</h5>
+        </div>
+
+    </div>
+    <h1 id="postTitle">Virtual URL Navigation using Vanilla Javascript</h1>
+    <div class="postTagsClass">
+        <h4 id="postTag">#VanillaJavascript</h4>
+        <h4 id="postTag">#Backend</h4>
+        <h4 id="postTag">#javascript</h4>
+        <h4 id="postTag">#webdevelopment</h4>
+    </div>
+    <div class="postReactionsContainerClass">
+        <div class="postReactionClass"><img id="postReactionIcon"
+                src="assets/icons/PostReaction/like_outline1.svg">
+            <h4>198 Reactions</h4>
+        </div>
+        <div class="postReactionClass"><img id="postReactionIcon"
+                src="assets/icons/PostReaction/comment_outline1.svg">
+            <h4>20 Comments</h4>
+        </div>
+        <div class="postReactionClass">
+            <h4>3 min read</h4>
+            <img id="postReactionIcon" src="assets/icons/PostReaction/bookmark_outline1.svg">
+        </div>
+
+    </div>
+</div> -->
+
+                <!-- POST 3 -->
+                <!-- <div id="bodyMiddle_posts">
+                    <img id="postImage" src="assets/images/Image2.jpg" alt="">
+                    <div class="postCredits">
+                        <img id="postImage" src="assets/icons/user.png">
+                        <div>
+                            <h4 id="postCredits_names">Nirmal Yohannan</h4>
+                            <h5 id="postCredits_date">Oct 2 (1 day ago)</h5>
+                        </div>
+
+                    </div>
+                    <h1 id="postTitle">Why You Should Choose Mern Stack?</h1>
+                    <div class="postTagsClass">
+                        <h4 id="postTag">#HTML</h4>
+                        <h4 id="postTag">#CSS</h4>
+                        <h4 id="postTag">#javascript</h4>
+                        <h4 id="postTag">#webdevelopment</h4>
+                    </div>
+                    <div class="postReactionsContainerClass">
+                        <div class="postReactionClass"><img id="postReactionIcon"
+                                src="assets/icons/PostReaction/like_outline1.svg">
+                            <h4>198 Reactions</h4>
+                        </div>
+                        <div class="postReactionClass"><img id="postReactionIcon"
+                                src="assets/icons/PostReaction/comment_outline1.svg">
+                            <h4>20 Comments</h4>
+                        </div>
+                        <div class="postReactionClass">
+                            <h4>3 min read</h4>
+                            <img id="postReactionIcon" src="assets/icons/PostReaction/bookmark_outline1.svg">
+                        </div>
+
+                    </div>
+                </div> -->
+
+
+            </div>
+            <div *ngIf="isLoading" style="text-align: center;">
+                <app-loading-spinner></app-loading-spinner>
+              </div>
+        </div>
+      
+    
+
+<!-- edit -->
+

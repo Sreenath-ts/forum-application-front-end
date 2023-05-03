@@ -1,0 +1,72 @@
+<!--   main  body-->
+
+<!-- chat bot  -->
+<section>
+<div id="chat-bot">
+  <div class="messenger expanded br10" [id]="'chat-boxx'+chatter._id">
+    <div class="timestamp">04:45 AM</div>
+    
+    <div class="chatroom" *ngIf="messageArray.length>0" >
+      <!-- msgs  -->
+      <div class="msg " *ngFor="let item of messageArray" [ngClass]="{'msg-right':item.user == currentUserId,'msg-left':item.user != currentUserId}" >
+        <div class="bubble">
+          <h6 class="name">{{item.userName}}</h6>
+        
+        <p *ngIf="item.message.contentType=='text'; else noMessage" class="break-all">{{ item.message.msg }}.</p>
+        <small style="float:right">{{ formatDate(item.message.date) }}</small>
+        <ng-template #noMessage>
+         <audio  style="    width: 12em;" [src]="item.message.msg" controls></audio>
+        </ng-template>
+        </div>
+      </div>
+      <!-- <div class="msg msg-right">
+        <div class="bubble">
+          Oh! Look at you. You are awesome
+        </div>
+      </div> -->
+     
+    
+      <!-- msgs  -->
+      <div class="msg msg-left" *ngIf="isTyping" >
+        
+          <span><i *ngIf="isTyping" class="isTyping">typing...</i></span>
+        
+      </div>
+    </div>
+     
+      
+    <div class="type-area">
+      
+      <input style="padding-left: 17px;"  type="text" (keypress)="typing()" [(ngModel)]="message" name="message" class="typing" placeholder="Type Here...">
+     
+      <button style="display: inline;
+      position: absolute;
+      left: 35ppx;
+      left: 0px;
+      top: 10px;" id="emoji" (click)="isEmojiPickerVisible = !isEmojiPickerVisible;">😀</button>
+         
+         
+
+      <span class="send ml-2" style="width: 33px;
+      display: flex;
+      justify-content: space-between;" >
+        
+        <svg (click)="sendMessage()" viewBox="0 0 24 24" height="20" width="20" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M1.101,21.757L23.8,12.028L1.101,2.3l0.011,7.912l13.623,1.816L1.112,13.845 L1.101,21.757z"></path></svg>
+        <svg (click)="sendAudio()" viewBox="0 0 24 24" height="20" width="20" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z"></path></svg>
+        <i class="bi bi-arrow-return-left"></i>
+      </span>
+    </div>
+    <emoji-mart style="    position: absolute;
+    top: 211px;
+    right: -23em" class="emoji-mart" *ngIf="isEmojiPickerVisible" (emojiSelect)="addEmoji($event)" title="Choose your emoji"></emoji-mart>
+  </div>
+  <!-- <div class="icon">
+    <div class="user">
+      <i class="bi bi-person-circle me-2"></i>
+      Adnan Khan
+    </div>
+    <i class="bi bi-x-lg"></i>
+  </div> -->
+</div>
+</section>
+<!--   main body end  -->

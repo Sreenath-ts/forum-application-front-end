@@ -25,7 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/tailwind.scss",
+              "src/header.css",
+              "src/index.css",
+              "src/postCard.css",
+              "src/rightside.css",
+              "src/mainBody.css"
             ],
             "scripts": []
           },

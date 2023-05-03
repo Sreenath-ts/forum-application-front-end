@@ -1,0 +1,100 @@
+
+<div class="comment-thread" *ngIf="answers.length>0">
+    <!-- Comment 1 start -->
+    <details open class="comment" id="comment-1" *ngFor="let a of answers;let i =index" >
+        <a href="#comment-1" class="comment-border-link">
+            <span class="sr-only">Jump to comment-{{i}}</span>
+        </a>
+        <summary>
+            <div class="comment-heading">
+                <div class="comment-voting">
+                    <button type="button">
+                        <span aria-hidden="true">&#9650;</span>
+                        <span class="sr-only">Vote up</span>
+                    </button>
+                    <button type="button">
+                        <span aria-hidden="true">&#9660;</span>
+                        <span class="sr-only">Vote down</span>
+                    </button>
+                </div>
+                <div class="comment-info">
+                    <a href="#" class="comment-author">{{a.user}}</a>
+                    <p class="m-0">
+                        22 points &bull; 4 days ago {{a?._id}}
+                    </p>
+                </div>
+            </div>
+        </summary>
+
+        <div class="comment-body">
+            <p class="my-2" [innerHTML]="a.body">
+               
+            </p>
+            <button type="button"  (click)="answerReplay(i)"  >Reply</button>
+            <button type="button">Flag</button>
+             <!-- like -->
+             <button class="btn" [id]="'green'+a._id" [ngClass]="{'green':a.userReaction == 'liked'}" (click)="vote(1,a._id)"  ><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+             <span style="text-align: center;" class="mx-2">{{a.reactions}}</span>
+             <button class="btn" [id]="'red'+a._id" [ngClass]="{'red':a.userReaction=='disliked'}" (click)="vote(0,a._id)"><i class="fa fa-thumbs-down fa-lg"  aria-hidden="true"></i></button>
+            <!-- Reply form start -->
+            <form #cForm="ngForm"  (ngSubmit)="cSub(cForm,a._id)" class="reply-form d-none" [id]="'comment-'+i+'-reply-form'">
+                <textarea placeholder="Reply to comment" ngModel name="body" minlength="5" rows="4"></textarea>
+                <button type="submit">Submit</button>
+                <button type="button" (click)="answerReplay(i)">Cancel</button>
+            </form>
+            <!-- Reply form end -->
+        </div>
+       <div *ngIf="comments.length>0">
+        <div class="replies" *ngFor="let c of comments">
+            <!-- Comment 2 start -->
+            <details open *ngIf="c.answer == a._id" class="comment" id="comment-2">
+                <a href="#comment-2" class="comment-border-link">
+                    <span class="sr-only">Jump to comment-2</span>
+                </a>
+                <summary>
+                    <div class="comment-heading">
+                        <div class="comment-voting">
+                            <button type="button">
+                                <span aria-hidden="true">&#9650;</span>
+                                <span class="sr-only">Vote up</span>
+                            </button>
+                            <button type="button">
+                                <span aria-hidden="true">&#9660;</span>
+                                <span class="sr-only">Vote down</span>
+                            </button>
+                        </div>
+                        <div class="comment-info">
+                            <a href="#" class="comment-author">{{c.user}}</a>
+                            <p class="m-0">
+                                4 points &bull; 3 days ago
+                            </p>
+                        </div>
+                    </div>
+                </summary>
+
+                <div class="comment-body">
+                    <p >
+                       {{c.body}}
+                    </p>
+                    <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Reply</button>
+                    <button type="button">Flag</button>
+
+                    <!-- Reply form start -->
+                    <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+                        <textarea placeholder="Reply to comment" rows="4"></textarea>
+                        <button type="submit">Submit</button>
+                        <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Cancel</button>
+                    </form>
+                    <!-- Reply form end -->
+                </div>
+            </details>
+            <!-- Comment 2 end -->
+
+           
+        </div>
+    </div>
+    <a class="ml-3 mt-2" *ngIf="comments.length>1">Load more replies</a>
+    </details>
+    <a *ngIf="answers.length>5">Load more replies</a>
+    <!-- Comment 1 end -->
+</div>

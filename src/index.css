@@ -1,0 +1,61 @@
+body
+{
+    margin: 0px;
+    font-family: 'calibri';
+}
+:root{
+    --secondColor: rgb(47, 58, 178);
+    --hoverColor:rgba(47, 58, 178, 0.168);
+    --borderRadius: 5px;
+}
+/* ../\.. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root,
+* {
+  /* font-size: 16px;
+  font-family: "poppins"; */
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  --transition-speed: 600ms;
+}
+
+.dark {
+  --text-primary: #abaaaa;
+  --text-secondary: #ececec;
+	--bg-primary: #04142c;
+	--bg-secondary: #002051;
+/* 	Lights out mode */
+/*   --bg-primary: #050506;
+  --bg-secondary: #242425; */
+  --link: #00d8d8;
+  --box: #474747;
+  --link-border: #3d3d3d;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+  --link: #0037ff;
+  --box: #474747;
+  --link-border: #acacac;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #ffdbc4;
+  --bg-secondary: #f5e5b8;
+  --link: #f2826e;
+  --box: #9d9c9c;
+  --link-border: #f2af96;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.5s;
+  min-width: 360px;
+}

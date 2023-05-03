@@ -1,0 +1,52 @@
+<div id="header">
+    <div class="center">
+        <select (change)="language($event)" name="sources" id="sources" class="custom-select sources" placeholder="Source Type">
+          <option value="java">java</option>
+          <option value="c">c</option>
+          <option value="cpp">cpp</option>
+          <option value="php">php</option>
+          <option value="python2">python2</option>
+          <option value="go">go</option>
+          <option value="sql">sql</option>
+          <option value="dart">dart</option>
+          <option value="nodejs">nodejs</option>
+        </select>
+      </div>
+</div>
+<div class="wrapper">
+
+<div id="code-editor">
+
+</div>
+    <!-- code editor -->
+    <div class="side-bar">
+        <i (click)="downloadCode()" class="fa fa-download icons"></i>
+        <i routerLink="/live-coding" class="fa fa-plus icons"></i>
+        <i class="fa-solid fa-play icons" (click)="run()"></i>
+    </div>
+    <!-- sidenav -->
+    <!-- Using BEM methodology -->
+<div class="terminal">
+    <div class="terminal__head">
+      <div class="terminal__controls">
+        <div class="terminal__button terminal__button--close"></div>
+        <div class="terminal__button terminal__button--minimise"></div>
+        <div class="terminal__button terminal__button--maximise"></div>
+      </div>
+      <div class="terminal__title">
+        <h1 class="terminal__title-text">Terminal -- console</h1>
+      </div>
+    </div>
+    <div class="terminal__body">
+       <div class="terminal__code">
+       <code class="terminal__code-language">
+       <ul class="terminal__commands-list">
+         <li class="terminal__command terminal__command--input">$ Let's code</li>
+         <!-- <li class="terminal__command terminal__command--output">$ </li> -->
+         <li class="terminal__command terminal__command--input">$ {{result?.output }}</li>
+       </ul>
+       </code>  
+      
+    </div>
+  </div>
+</div>
